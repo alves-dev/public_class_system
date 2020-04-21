@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet"/>
+    <link href="{% static 'css/default.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css" media="all"/>
+</head>
+
+<div id="newsletter">
+    <h2>Descrição de como se da o funcionamento do sistema:</h2>
+    <p>Foi baseado em uma regra de negócio onde a empresa 'test company' tem um sistema ERP e tem a necessidade de ter
+        um material online para os funcionários de seus clientes.
+    </p>
+
+    <h4>Regras:</h4>
+    <p>- Para acessar a plataforma de aulas o usuário deve se cadastrar informando o seu CPF e o CNPJ da empresa a qual
+        trabalha.</p>
+
+    <p>- O administrador deve confirmar que o usuário é funcionário da empresa em questão e realizar a liberação do seu
+        usuário.</p>
+
+    <p>- Após a liberação o usuário terá acesso as aulas onde ele pode escolher o tema e o sub-tema das aulas que
+        deseja.</p>
+
+    ------------------------------------------------------------------------------------------------------------------------------------------
+
+    <h2>Description of how the system works:</h2>
+    <p>It was based on a business rule where the test company has an ERP system and needs to have
+        online material for your customers' employees.
+    </p>
+
+    <h4>Rules:</h4>
+    <p>- To access the class platform the user must register by informing his CPF and CNPJ of the company to which
+        works.</p>
+
+    <p>- The administrator must confirm that the user is an employee of the company in question and release his
+        user.</p>
+
+    <p>- After the release, the user will have access to the classes where he can choose the theme and sub-theme of the
+        classes that want.</p>
+</div>
+</html>
+
+{% endblock %}

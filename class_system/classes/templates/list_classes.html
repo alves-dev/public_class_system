@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet"/>
+    <link href="{% static 'css/default.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css" media="all"/>
+</head>
+{% for t in theme%}
+    <div id="newsletter">
+        <h1>{{t.name}}</h1>
+    </div>
+    <div>
+        <p></p>
+    </div>
+    {% for s in sub_theme %}
+        {% if s.theme == t %}
+            <div id="newsletter">
+                <h2>{{s.name}}</h2>
+            </div>
+            <div id="three-column" class="container">
+                {% for c in classes%}
+                        {% if c.sub_theme == s %}
+                            <div>
+                                <span class="arrow-down"></span>
+                            </div>
+                            <div id="tbox1"><span class="icon icon-wrench"></span>
+                                <div class="title">
+                                    <h2>{{c.title}}</h2>
+                                </div>
+                                <p>
+                                    {{c.description}}
+                                </p>
+                                <a href="{% url 'classes:assisted' c.slug %}" class="button">Assistir</a>
+                            </div>
+                        {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+
+</html>
+
+{% endblock %}

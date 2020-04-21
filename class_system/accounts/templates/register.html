@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet"/>
+    <link href="{% static 'css/default.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<div id="newsletter">
+    <h2>New user!</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {% for f in form %}
+        <div class="content">
+            {{ f.label_tag }}
+            {{ f }}
+            {{ f.errors }}
+            ____________________________________________________________________
+        </div>
+        {% endfor %}
+        <button class="button submit" type="submit">Salvar Usuário</button>
+    </form>
+</div>
+</html>
+
+{% endblock %}

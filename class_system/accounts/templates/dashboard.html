@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet"/>
+    <link href="{% static 'css/default.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css" media="all"/>
+</head>
+
+<div id="newsletter">
+    <h3>Informações da conta:</h3>
+    <p><strong>User:</strong> {{ user }}</p>
+    <p><strong>NOME:</strong> {{ user.name }} | <strong>E-mail:</strong> {{ user.email }} </p>
+    <p><strong>CPF:</strong> {{ user.cpf }} | <strong>CNPJ EMPRESA:</strong> {{ user.cnpj_company }} </p>
+    <p><strong>DATA DE REGISTRO:</strong> {{ user.date_registration }} | <strong>DATA DO ÚLTIMO ACESSO:</strong>
+        {{ user.date_last_access }} </p>
+    <p><strong>Status:</strong> {{ user.status }} </p>
+</div>
+<div>
+    </p>
+</div>
+<div id="newsletter">
+    <h3>Editar da conta:</h3>
+    <p>Botão para nova senha</p>
+    <p>Botão para alterar outras informações</p>
+</div>
+<div>
+    </p>
+</div>
+<div id="newsletter">
+    <h3>Aulas assistidas:</h3>
+    {% for a in assisted %}
+        <p><strong>{{a.classe}}</strong> - {{a.date_assisted}}</p>
+    {% endfor %}
+</div>
+</html>
+
+{% endblock %}

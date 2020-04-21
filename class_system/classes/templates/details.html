@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet"/>
+    <link href="{% static 'css/default.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<div id="newsletter">
+    <h1>{{classe.title}}</h1>
+    <h3>Sub-tema: {{classe.sub_theme}}</h3>
+    <h5>Data de criação: {{classe.creation_date}}</h5>
+    <p>DESCRIÇÃO: {{classe.description}}</p>
+
+    <iframe width="560" height="315" src="{{classe.link}}" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</div>
+</html>
+
+{% endblock %}

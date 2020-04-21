@@ -1,0 +1,7 @@
+Django == 2.0.2
+
+# execuar no terminal antes:
+# sudo apt-get install postgresql
+# sudo apt-get install python-psycopg2
+# sudo apt-get install libpq-dev
+psycopg2 == 2.8.5
